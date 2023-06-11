@@ -46,43 +46,64 @@ This type of counter is normally referred to as a Down Counter, (CTD). In a bina
 
 4-bit Count Down Counter
 ### Procedure
-/* write all the steps invloved */
-
-
+/* Compile and run the verilog program in the quartus software. Realize the RTL logic for the same. Create a new university program vwf and import nodes using node finder. Run functional simulation to obtain the timing diagram. */
 
 ### PROGRAM 
 /*
 Program for flipflops  and verify its truth table in quartus using Verilog programming.
-Developed by: 
-RegisterNumber:  
+Developed by: s.THIRISHA.S
+RegisterNumber:  212222230160
 */
+UP COUNTER :
 
+module uc(clk,A);
+input clk;
+output reg [3:0]A;
+always@(posedge clk)
+begin
+A[3]=((A[2]&A[1])&A[0])^A[3];
+A[2]=(A[1]&A[0])^A[2];
+A[1]=(A[0]^A[1]);
+A[0]=1^A[0];
+end
+endmodule
 
+DOWN COUNTER :
 
-
-
+module dc(clk,A);
+input clk;
+output reg [3:0]A;
+always @(posedge clk)
+begin
+A[3]=((~A[2])&(~A[1])&(~A[0]))^A[3];
+A[2]=((~A[1])&(~A[0]))^A[2];
+A[1]=(~A[0])^A[1];
+A[0]=1^A[0];
+end
+endmodule
+*/
 
 ### RTL LOGIC UP COUNTER AND DOWN COUNTER  
 
+## UP COUNTER:
+![image](https://github.com/Thirisha-s/Exp-7-Synchornous-counters-/assets/120380280/79e6ea03-c707-4ce0-890d-3290896978b6)
 
-
-
-
-
-
-
+## DOUN COUNTER:
+![image](https://github.com/Thirisha-s/Exp-7-Synchornous-counters-/assets/120380280/afa34e1b-810d-4e8c-a823-39f007dc9106)
 
 ### TIMING DIGRAMS FOR COUNTER  
+## UP COUNTER:
+![image](https://github.com/Thirisha-s/Exp-7-Synchornous-counters-/assets/120380280/df9e8923-e0fa-4da4-b653-05e9cd1d3e7b)
 
-
-
-
+## DOUN COUNTER:
+![image](https://github.com/Thirisha-s/Exp-7-Synchornous-counters-/assets/120380280/4967df4b-0d55-469c-95b8-4e53f2dac4b2)
 
 ### TRUTH TABLE 
+## UP COUNTER:
+![image](https://github.com/Thirisha-s/Exp-7-Synchornous-counters-/assets/120380280/f5f4c0dd-8c2d-478c-810a-36a1f03466ba)
 
+## ## DOUN COUNTER:
+![image](https://github.com/Thirisha-s/Exp-7-Synchornous-counters-/assets/120380280/55349fb5-3f4b-4880-803d-017bb54a7af6)
 
-
-
-
-
-### RESULTS 
+### RESULTS :
+Thus,4 bit Up and Down counters are implemented successfully.
