@@ -49,11 +49,11 @@ This type of counter is normally referred to as a Down Counter, (CTD). In a bina
 /* Compile and run the verilog program in the quartus software. Realize the RTL logic for the same. Create a new university program vwf and import nodes using node finder. Run functional simulation to obtain the timing diagram. */
 
 ### PROGRAM 
-/*
+```
 Program for flipflops  and verify its truth table in quartus using Verilog programming.
 Developed by: s.THIRISHA.S
 RegisterNumber:  212222230160
-*/
+```
 UP COUNTER :
 
 module uc(clk,A);
@@ -67,9 +67,10 @@ A[1]=(A[0]^A[1]);
 A[0]=1^A[0];
 end
 endmodule
+```
 
 DOWN COUNTER :
-
+```
 module dc(clk,A);
 input clk;
 output reg [3:0]A;
@@ -81,7 +82,7 @@ A[1]=(~A[0])^A[1];
 A[0]=1^A[0];
 end
 endmodule
-*/
+```
 
 ### RTL LOGIC UP COUNTER AND DOWN COUNTER  
 
